@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOCUS School</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+
+background:#0f1722;
+
+color:white;
+
+}
+
+header{
+
+padding:40px;
+
+border-bottom:1px solid #283444;
+
+}
+
+header h1{
+
+font-size:52px;
+
+font-weight:800;
+
+}
+
+header span{
+
+color:#f59e0b;
+
+}
+
+header p{
+
+margin-top:15px;
+
+color:#94a3b8;
+
+font-size:20px;
+
+max-width:900px;
+
+line-height:1.6;
+
+}
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+padding:40px;
+
+}
+
+.card{
+
+background:#172331;
+
+padding:25px;
+
+border-radius:10px;
+
+}
+
+.card h3{
+
+font-size:13px;
+
+letter-spacing:2px;
+
+color:#7c93b4;
+
+font-weight:500;
+
+text-transform:uppercase;
+
+margin-bottom:15px;
+
+}
+
+.valor{
+
+font-size:48px;
+
+font-weight:800;
+
+}
+
+.descripcion{
+
+margin-top:10px;
+
+color:#8da2bf;
+
+}
+
+.mapa{
+
+margin:0 40px 40px;
+
+height:550px;
+
+background:#16202d;
+
+border-radius:12px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+color:#52637d;
+
+border:1px dashed #314258;
+
+}
+
+footer{
+
+padding:25px;
+
+text-align:center;
+
+color:#6d819d;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>LOCUS <span>School</span></h1>
+
+<p>
+
+Observatorio territorial para el análisis multicriterio de potencial competitivo de establecimientos educacionales.
+
+</p>
+
+</header>
+
+<section class="dashboard">
+
+<div class="card">
+
+<h3>Colegios</h3>
+
+<div class="valor">145</div>
+
+<div class="descripcion">
+
+Analizados
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Escenarios</h3>
+
+<div class="valor">2</div>
+
+<div class="descripcion">
+
+Volumen y Vulnerabilidad
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Radio</h3>
+
+<div class="valor">2 km</div>
+
+<div class="descripcion">
+
+Área de influencia
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Liceo</h3>
+
+<div class="valor">SF</div>
+
+<div class="descripcion">
+
+Establecimiento objetivo
+
+</div>
+
+</div>
+
+</section>
+
+<section class="mapa">
+
+Aquí aparecerá el mapa interactivo
+
+</section>
+
+<footer>
+
+Desarrollado por LOCUS • 2026
+
+</footer>
+
+</body>
+
+</html>
