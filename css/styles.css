@@ -402,10 +402,48 @@ aside {
     .mapa {
         height: 450px; /* Menor tamaño en dispositivos pequeños */
     }
+ 
+}
+@media (max-width: 768px) {
 
-    /* ==========================
+    .search-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .titulo p {
+        font-size: 15px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .mapa {
+        height: 450px;
+    }
+
+} /* ← Cierra aquí el @media */
+
+/* ==========================================
    FOOTER
-========================== */
+========================================== */
 
 .footer{
     margin-top:40px;
@@ -423,5 +461,4 @@ aside {
 .footer-content{
     max-width:1200px;
     margin:auto;
-}
 }
