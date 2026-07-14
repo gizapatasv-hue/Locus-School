@@ -29,6 +29,14 @@ legend.onAdd = function (map) {
     div.innerHTML = '<h4>Potencial Competitivo</h4>';
 
     // Niveles definidos en tu configuración de colores CSS y JS
+    const niveles = [
+        { etiqueta: 'Muy Alto', color: 'var(--pot-muy-alto)' },
+        { etiqueta: 'Alto', color: 'var(--pot-alto)' },
+        { etiqueta: 'Medio', color: 'var(--pot-medio)' },
+        { etiqueta: 'Bajo', color: 'var(--pot-bajo)' },
+        { etiqueta: 'Muy Bajo', color: 'var(--pot-muy-bajo)' }
+    ];
+
     // Construye dinámicamente cada fila de la leyenda utilizando las clases de tu CSS
     niveles.forEach(nivel => {
         div.innerHTML += `
