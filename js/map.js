@@ -15,6 +15,44 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
+
+//------------------------------------------
+// LEYENDA DEL MAPA (Control Flotante Leaflet)
+//------------------------------------------
+const legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function (map) {
+    // Crea el contenedor con las clases CSS definidas en tu hoja de estilos
+    const div = L.DomUtil.create('div', 'info legend');
+    
+    // Título de la leyenda
+    div.innerHTML = '<h4>Potencial Competitivo</h4>';
+
+    // Niveles definidos en tu configuración de colores CSS y JS
+    // Construye dinámicamente cada fila de la leyenda utilizando las clases de tu CSS
+    niveles.forEach(nivel => {
+        div.innerHTML += `
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: ${nivel.color};"></span>
+                <span>${nivel.etiqueta}</span>
+            </div>
+        `;
+    });
+
+    // Opcional: Agregar el ícono del Liceo de Estudio si quieres que aparezca en la leyenda
+    div.innerHTML += `
+        <div class="legend-item" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border);">
+            <img src="assets/marker_estudio.png" style="width: 16px; height: 16px; margin-right: 8px; vertical-align: middle;">
+            <span style="font-size: 11.5px; font-weight: 600;">Liceo de Referencia</span>
+        </div>
+    `;
+
+    return div;
+};
+
+// Añadir la leyenda al mapa
+legend.addTo(map);
+
 //------------------------------------------
 // Icono establecimiento de estudio (Liceo)
 //------------------------------------------
