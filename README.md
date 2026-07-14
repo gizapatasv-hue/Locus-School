@@ -1,8 +1,12 @@
-# LOCUS School
-Plataforma de análisis territorial para estudios de establecimientos educacionales.
+LOCUS - Observatorio Territorial
 
-## Proyecto Piloto
+Plataforma interactiva para análisis territorial y evaluación de potencial competitivo de establecimientos educacionales mediante indicadores geoespaciales.
 
-Modelo multicriterio de potencial competitivo de colegios.
+Tecnologías:
+• Leaflet
+• JavaScript
+• HTML5
+• CSS3
+• GeoJSON
 
 Desarrollado por LOCUS.
