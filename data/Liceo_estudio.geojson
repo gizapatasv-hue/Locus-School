@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Liceo_estudio",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0.0, "Name": "Liceo Técnico Felisa Clara Tolup Zeiman", "FolderPath": "Liceo_SF.kmz/Liceo_SF", "SymbolID": 0.0, "AltMode": -1, "Base": 0.0, "Snippet": null, "PopupInfo": null, "HasLabel": -1, "LabelID": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -70.985535299999981, -34.589458699999966, 0.0 ] } }
+]
+}
