@@ -402,4 +402,26 @@ aside {
     .mapa {
         height: 450px; /* Menor tamaño en dispositivos pequeños */
     }
+
+    /* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    margin-top:40px;
+    padding:25px 20px;
+    background:#243447;
+    color:#ffffff;
+    text-align:center;
+    font-size:14px;
+}
+
+.footer strong{
+    color:#ffffff;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+}
 }
