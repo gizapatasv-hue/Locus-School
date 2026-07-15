@@ -490,3 +490,100 @@ aside {
     max-width:1200px;
     margin:auto;
 }
+.dashboard-summary{
+
+    margin-top:40px;
+    padding:30px;
+
+}
+
+.kpi-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+
+}
+
+.kpi-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    
+    .kpi-card{
+
+    padding:18px;
+
+}
+
+}
+
+.kpi-value{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#2F3437;
+
+      font-size:2.3rem;
+
+}
+
+.kpi-label{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#666;
+
+    margin-top:5px;
+
+}
+
+.charts-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+}
+
+.chart-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+    height:340px;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    height:260px !important;
+
+}
+
+/* Ajuste estético para el control de norte */
+.leaflet-north-arrow {
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+}

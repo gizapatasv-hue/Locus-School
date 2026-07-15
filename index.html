@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -27,8 +28,8 @@
 
     <section class="cards">
         <div class="card">
-            <h3>Colegios</h3>
-            <h2>145</h2>
+            <h3>Establecimientos</h3>
+            <h2 id="kpiTotalSuperior">177</h2>
             <span>Analizados</span>
         </div>
 
@@ -64,38 +65,77 @@
             </div>
 
             <div id="map" class="mapa"></div>
+
+            <section class="dashboard-summary">
+                <h2>Resumen del Escenario</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-value" id="kpiTotal">0</span>
+                        <span class="kpi-label">Colegios</span>
+                    </div>
+
+                    <div class="kpi-card">
+                        <span class="kpi-value" id="kpiMuyAlto">0</span>
+                        <span class="kpi-label">Muy Alto</span>
+                    </div>
+
+                    <div class="kpi-card">
+                        <span class="kpi-value" id="kpiPromedio">0</span>
+                        <span class="kpi-label">Índice Promedio</span>
+                    </div>
+
+                    <div class="kpi-card">
+                        <span class="kpi-value" id="kpiMaximo">0</span>
+                        <span class="kpi-label">Índice Máximo</span>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Colegios según Potencial</h3>
+                        <canvas id="chartPotencial"></canvas>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Distribución del Índice</h3>
+                        <canvas id="chartHistograma"></canvas>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <aside class="sidebar">
-            <div class="panel highlight-panel">
-<div class="panel">
-    <h3>Escenarios de Priorización</h3>
-    <div class="panel-content">
-        <p style="margin-bottom: 15px; font-size: 13.5px; color: #666;">
-            El modelo evalúa el potencial de cada establecimiento mediante un análisis multicriterio que integra variables demográficas, espaciales y de matrícula.
-        </p>
-        
-        <div class="escenario-info" style="margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                <span class="badge-escenario">E1</span>
-                <strong style="color: var(--text); font-size: 14px;">Volumen de Mercado</strong>
-            </div>
-            <p style="font-size: 13px; line-height: 1.4; color: #555;">
-                Orientado a <strong>maximizar el alcance territorial</strong>. Prioriza establecimientos que concentran una mayor cantidad de estudiantes potenciales (14 a 17 años) en su entorno y que cuentan con una mayor matrícula propia. Ideal para campañas de difusión masiva.
-            </p>
-        </div>
+            <div class="panel">
+                <h3>Escenarios de Priorización</h3>
+                <div class="panel-content">
+                    <p style="margin-bottom: 15px; font-size: 13.5px; color: #666;">
+                        El modelo evalúa el potencial de cada establecimiento mediante un análisis multicriterio que integra variables demográficas, espaciales y de matrícula.
+                    </p>
+                    
+                    <div class="escenario-info" style="margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="badge-escenario">E1</span>
+                            <strong style="color: var(--text); font-size: 14px;">Volumen de Mercado</strong>
+                        </div>
+                        <p style="font-size: 13px; line-height: 1.4; color: #555;">
+                            Orientado a <strong>maximizar el alcance territorial</strong>. Prioriza establecimientos que concentran una mayor cantidad de estudiantes potenciales (14 a 17 años) en su entorno y que cuentan con una mayor matrícula propia. Ideal para campaigns de difusión masiva.
+                        </p>
+                    </div>
 
-        <div class="escenario-info">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                <span class="badge-escenario" style="background-color: var(--green);">E2</span>
-                <strong style="color: var(--text); font-size: 14px;">Vulnerabilidad Competitiva</strong>
+                    <div class="escenario-info">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="badge-escenario" style="background-color: var(--green);">E2</span>
+                            <strong style="color: var(--text); font-size: 14px;">Vulnerabilidad Competitiva</strong>
+                        </div>
+                        <p style="font-size: 13px; line-height: 1.4; color: #555;">
+                            Busca <strong>oportunidades estratégicas de captación</strong>. Aquí, una gran matrícula se interpreta como mayor presión competitiva. El modelo prioriza aquellos sectores con alta demanda potencial, pero donde los colegios competidores tienen una menor consolidación relativa.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p style="font-size: 13px; line-height: 1.4; color: #555;">
-                Busca <strong>oportunidades estratégicas de captación</strong>. Aquí, una gran matrícula se interpreta como mayor presión competitiva. El modelo prioriza aquellos sectores con alta demanda potencial, pero donde los colegios competidores tienen una menor consolidación relativa.
-            </p>
-        </div>
-    </div>
-</div>
+
+            <div class="panel highlight-panel">
                 <h3>Ranking</h3>
                 <div id="rankingPanel" class="panel-content dynamic-placeholder">
                     <p>Seleccione un establecimiento para ver su índice competitivo.</p>
@@ -116,12 +156,12 @@
     <script src="js/map.js"></script>
     <script src="js/app.js"></script>
     
-<footer class="footer">
-    <div class="footer-content">
-        © 2026 <strong>LOCUS</strong> | Observatorio Territorial<br>
-        Plataforma de análisis territorial y apoyo a la toma de decisiones.
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="footer-content">
+            © 2026 <strong>LOCUS</strong> | Observatorio Territorial<br>
+            Plataforma de análisis territorial y apoyo a la toma de decisiones.
+        </div>
+    </footer>
 
 </body>
 </html>
